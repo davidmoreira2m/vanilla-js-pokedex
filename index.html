@@ -25,102 +25,17 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/pokedex.css" />
   </head>
   <body>
     <section class="content">
       <h1 class="title-pokedex">Pokedex</h1>
-      <ol class="pokemons">
-        <li class="pokemon">
-          <span class="pokemon__number">#001</span>
-          <span class="pokemon__name">Bulbasaur</span>
-
-          <div class="pokemon__detail">
-            <ol class="pokemon__types">
-              <li class="pokemon__types__type">Grass</li>
-              <li class="pokemon__types__type">Poison</li>
-            </ol>
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-              alt="Bulbasaur"
-            />
-          </div>
-        </li>
-        <li class="pokemon">
-          <span class="pokemon__number">#001</span>
-          <span class="pokemon__name">Bulbasaur</span>
-
-          <div class="pokemon__detail">
-            <ol class="pokemon__types">
-              <li class="pokemon__types__type">Grass</li>
-              <li class="pokemon__types__type">Poison</li>
-            </ol>
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-              alt="Bulbasaur"
-            />
-          </div>
-        </li>
-        <li class="pokemon">
-          <span class="pokemon__number">#001</span>
-          <span class="pokemon__name">Bulbasaur</span>
-
-          <div class="pokemon__detail">
-            <ol class="pokemon__types">
-              <li class="pokemon__types__type">Grass</li>
-              <li class="pokemon__types__type">Poison</li>
-            </ol>
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-              alt="Bulbasaur"
-            />
-          </div>
-        </li>
-        <li class="pokemon">
-          <span class="pokemon__number">#001</span>
-          <span class="pokemon__name">Bulbasaur</span>
-
-          <div class="pokemon__detail">
-            <ol class="pokemon__types">
-              <li class="pokemon__types__type">Grass</li>
-              <li class="pokemon__types__type">Poison</li>
-            </ol>
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
-              alt="Bulbasaur"
-            />
-          </div>
-        </li>
-        <li class="pokemon">
-          <span class="pokemon__number">#001</span>
-          <span class="pokemon__name">Bulbasaur</span>
-
-          <div class="pokemon__detail">
-            <ol class="pokemon__types">
-              <li class="pokemon__types__type">Grass</li>
-              <li class="pokemon__types__type">Poison</li>
-            </ol>
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg"
-              alt="Bulbasaur"
-            />
-          </div>
-        </li>
-        <li class="pokemon">
-          <span class="pokemon__number">#001</span>
-          <span class="pokemon__name">Bulbasaur</span>
-
-          <div class="pokemon__detail">
-            <ol class="pokemon__types">
-              <li class="pokemon__types__type">Grass</li>
-              <li class="pokemon__types__type">Poison</li>
-            </ol>
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg"
-              alt="Bulbasaur"
-            />
-          </div>
-        </li>
-      </ol>
+      <div class="search-container">
+        <input type="text" id="pokemonName" placeholder="nome ou número" />
+        <button id="searchButton">Pesquisar</button>
+      </div>
+      <ol class="pokemons" id="pokemonList"></ol>
     </section>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
