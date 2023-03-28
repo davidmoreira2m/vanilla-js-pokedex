@@ -12,8 +12,8 @@
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  width: 170px;
-  height: 170px;
+  width: 179px;
+  height: 180px;
 }
 
 .pokemon__name {
@@ -23,10 +23,9 @@
 }
 
 .pokemon__number {
-  color: #37927d;
   text-align: right;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .pokemon__detail {
@@ -35,6 +34,7 @@
   flex-grow: 0;
   justify-content: space-between;
   gap: 3px;
+  height: 100%;
 }
 
 .pokemon__types {
@@ -45,104 +45,105 @@
 }
 
 .pokemon__types__type {
-  background-color: #61e1ca;
   padding: 0.15rem 0.25rem;
   margin-bottom: 0.25rem;
   border-radius: 1rem;
   font-size: 0.75rem;
+  box-shadow: inset 50px 50px 50px rgba(0, 0, 0, 0.097);
 }
 
 .pokemon__detail img {
   max-width: 100px;
   max-height: 100px;
+  justify-self: baseline;
 }
 
-.pokemon__types__type.bug {
+.bug {
   background-color: #8cb230;
   color: #fff;
 }
 
-.pokemon__types__type.dark {
+.dark {
   background-color: #58575f;
   color: #fff;
 }
 
-.pokemon__types__type.dragon {
+.dragon {
   background-color: #0f6ac0;
   color: #fff;
 }
 
-.pokemon__types__type.electric {
+.electric {
   background-color: #eed535;
   color: #000;
 }
 
-.pokemon__types__type.fairy {
+.fairy {
   background-color: #ed6ec7;
   color: #fff;
 }
 
-.pokemon__types__type.fighting {
+.fighting {
   background-color: #d04164;
   color: #fff;
 }
 
-.pokemon__types__type.fire {
+.fire {
   background-color: #fd7d24;
   color: #fff;
 }
 
-.pokemon__types__type.flying {
+.flying {
   background-color: #748fc9;
   color: #fff;
 }
 
-.pokemon__types__type.ghost {
+.ghost {
   background-color: #556aae;
   color: #fff;
 }
 
-.pokemon__types__type.grass {
+.grass {
   background-color: #62b957;
   color: #fff;
 }
 
-.pokemon__types__type.ground {
+.ground {
   background-color: #dd7748;
   color: #fff;
 }
 
-.pokemon__types__type.ice {
+.ice {
   background-color: #61cec0;
   color: #fff;
 }
 
-.pokemon__types__type.normal {
+.normal {
   background-color: #9da0aa;
   color: #fff;
 }
 
-.pokemon__types__type.poison {
+.poison {
   background-color: #a552cc;
   color: #fff;
 }
 
-.pokemon__types__type.psychic {
+.psychic {
   background-color: #ea5d60;
   color: #fff;
 }
 
-.pokemon__types__type.rock {
+.rock {
   background-color: #baab82;
   color: #fff;
 }
 
-.pokemon__types__type.steel {
+.steel {
   background-color: #417d9a;
   color: #fff;
 }
 
-.pokemon__types__type.water {
+.water {
   background-color: #4a90da;
   color: #fff;
 }

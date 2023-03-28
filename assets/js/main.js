@@ -1,41 +1,20 @@
 // Selecionando elementos do DOM
 const pokemonListHtml = document.getElementById("pokemonList");
 const searchButton = document.getElementById("searchButton");
+const paginationButton = document.getElementById("paginationButton");
 const pokemonNameInput = document.getElementById("pokemonName");
 
 // Definindo variáveis
 let listStart = 0;
-let listEnd = 151;
+let listEnd = 12;
 let nomeOuNum = "";
-
-// Consumindo a POKEAPI
-async function getPokemonData(id) {
-  const response = await fetch(`https://pokeapi.co/api/v2/${id}`);
-  const data = await response.json();
-  return data;
-}
-
-// Gerando lista de Pokemons
-async function getPokemonList(nomeOuNum, listStart, listEnd) {
-  let pokemonData = [];
-
-  if (nomeOuNum) {
-    pokemonData.push(await getPokemonData(`pokemon/${nomeOuNum}`));
-  } else {
-    for (let i = listStart; i < listEnd; i++) {
-      pokemonData.push(await getPokemonData(`pokemon/${i + 1}`));
-    }
-  }
-
-  return pokemonData;
-}
 
 // Renderizando lista de Pokemons no HTML
 async function renderPokemonList() {
   const pokemonList = await getPokemonList(nomeOuNum, listStart, listEnd);
 
   pokemonList.forEach((pokemon) => {
-    const { order, name, types, sprites } = pokemon;
+    const { id, name, types, sprites } = pokemon;
 
     // Criando elementos HTML
     const pokemonCard = document.createElement("li");
@@ -47,13 +26,14 @@ async function renderPokemonList() {
 
     // Adicionando classes aos elementos HTML
     pokemonCard.classList.add("pokemon");
+    pokemonCard.classList.add(types[0].type.name); // Add class com o nome do tipo principal do pokemon
     pokemonCardNumber.classList.add("pokemon__number");
     pokemonCardName.classList.add("pokemon__name");
     pokemonCardDetail.classList.add("pokemon__detail");
     pokemonCardTypes.classList.add("pokemon__types");
 
     // Definindo conteúdo dos elementos HTML
-    pokemonCardNumber.textContent = `#${String(order).padStart(3, "0")}`;
+    pokemonCardNumber.textContent = `#${String(id).padStart(3, "0")}`;
     pokemonCardName.textContent = name;
     pokemonCardImg.src = sprites.other.dream_world.front_default;
 
@@ -80,8 +60,15 @@ async function renderPokemonList() {
 renderPokemonList();
 
 // Adicionando listener ao botão de pesquisa
-searchButton.addEventListener("click", async () => {
+searchButton.addEventListener("click", () => {
   nomeOuNum = pokemonNameInput.value.toLowerCase().trim();
   pokemonListHtml.innerHTML = "";
-  await renderPokemonList();
+  renderPokemonList();
+});
+
+// Adicionando listener da paginação da lista de pokemons
+paginationButton.addEventListener("click", () => {
+  listStart += 12;
+  listEnd += 12;
+  renderPokemonList();
 });
