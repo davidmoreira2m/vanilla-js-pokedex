@@ -5,8 +5,10 @@ const paginationButton = document.getElementById("paginationButton");
 const pokemonNameInput = document.getElementById("pokemonName");
 
 // Definindo variáveis
+let maxList = 151; // máximo total de pokemons a serem listados
+let pokePerPage = 12; // quantos pokemons serão carregados por cada pagina/requisição
 let listStart = 0;
-let listEnd = 12;
+let listEnd = pokePerPage;
 let nomeOuNum = "";
 
 // Renderizando lista de Pokemons no HTML
@@ -66,9 +68,16 @@ searchButton.addEventListener("click", () => {
   renderPokemonList();
 });
 
-// Adicionando listener da paginação da lista de pokemons
+// Adicionando listener e lógica ao botão de paginação
 paginationButton.addEventListener("click", () => {
-  listStart += 12;
-  listEnd += 12;
-  renderPokemonList();
+  if (listEnd < maxList - pokePerPage) {
+    listStart = listEnd;
+    listEnd += pokePerPage;
+    renderPokemonList();
+  } else {
+    listStart = listEnd;
+    listEnd = maxList;
+    paginationButton.parentElement.removeChild(paginationButton);
+    renderPokemonList();
+  }
 });

@@ -16,6 +16,5 @@ async function getPokemonList(nomeOuNum, listStart, listEnd) {
       pokemonData.push(await getPokemonData(`pokemon/${i + 1}`));
     }
   }
-  console.log(pokemonData);
   return pokemonData;
 }
